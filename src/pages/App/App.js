@@ -2,7 +2,8 @@ import "./App.css";
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
-import ShipList from '../ShipList/ShipList'
+import ShipList from "../ShipList/ShipList";
+import ShipDetails from "../ShipDetails/ShipDetails";
 
 class App extends Component {
   state = {
@@ -12,11 +13,12 @@ class App extends Component {
     return (
       <>
         <NavBar navItems={this.state.navItems} />
+        <Route exact path="/ships" render={() => <ShipList />} />
         <Route
           exact
-          path="/ships"
-          render={() => <ShipList />
-          }/>
+          path="/details"
+          render={({ location }) => <ShipDetails location={location} />}
+        />
       </>
     );
   }
