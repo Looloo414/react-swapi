@@ -8,6 +8,7 @@ class ShipList extends Component {
   }
   async componentDidMount() {
     const shipData = await getShipList();
+    console.log(shipData)
     this.setState({ results: shipData.results });
   }
   render() {
@@ -20,15 +21,15 @@ class ShipList extends Component {
               <Link
                 to={{
                   pathname: "/ship",
-                  state: { shipName },
+                  state: shipName ,
                 }}
               >
                 <div id="classDiv">
-                  <img
+                  {/* <img
                     style={{ width: "100px", height: "100px" }}
                     src={`/images/${shipName.name}.svg`}
                     alt=""
-                  />
+                  /> */}
                   {shipName.name}
                 </div>
               </Link>
