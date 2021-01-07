@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getShipList } from "../../services/api-calls";
-import { Link } from "react-router-dom";
+import  {Link}  from "react-router-dom";
 
 class ShipList extends Component {
   state = {
@@ -16,22 +16,15 @@ class ShipList extends Component {
       <>
         <h1>Ship List </h1>
         <div className="ship-container">
-          {this.state.results.map((shipName) => (
-            <div key={shipName.index}>
+          {this.state.results.map((shipName, idx) => (
+            <div key={idx}>
               <Link
                 to={{
-                  pathname: "/ship",
-                  state: shipName ,
+                  pathname: "/details",
+                  state: {shipName} ,
                 }}
               >
-                <div id="classDiv">
-                  {/* <img
-                    style={{ width: "100px", height: "100px" }}
-                    src={`/images/${shipName.name}.svg`}
-                    alt=""
-                  /> */}
                   {shipName.name}
-                </div>
               </Link>
             </div>
           ))}
