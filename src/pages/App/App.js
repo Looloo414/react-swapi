@@ -12,13 +12,15 @@ class App extends Component {
   render() {
     return (
       <>
-        <NavBar navItems={this.state.navItems} />
-        <Route exact path="/ships" render={() => <ShipList />} />
-        <Route
-          exact
-          path="/details"
-          render={({ location }) => <ShipDetails location={location} />}
-        />
+        <div className="App">
+            <NavBar className="main" navItems={this.state.navItems} />
+            <Route exact path="/ships" render={() => <ShipList />} />
+          <Route
+            exact
+            path="/details"
+            render={({ location }) => <ShipDetails location={location} />}
+          />
+        </div>
       </>
     );
   }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const NavBar =  (props) => {
     return( 
-        <header>
+        <header className="nav-bar">
             {props.navItems.map((nav, idx) =>
             <a key={idx} href={nav.url}>{nav.name}</a>
             )}

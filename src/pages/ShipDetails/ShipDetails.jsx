@@ -16,12 +16,11 @@ class ShipDetails extends Component {
     console.log(details)
     return (
       <div>
-          <h1>hi</h1>
         {details.name ? 
           <>
             <h4>
               {" "}
-              {details.name} <br /> {details.model}{" "}
+              {details.name} <br /><br />  {details.model}{" "}
             </h4>
             <Link to={{ pathname: "/" }}>RETURN TO HOME BASE</Link>
           </>

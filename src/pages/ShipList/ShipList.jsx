@@ -14,8 +14,8 @@ class ShipList extends Component {
   render() {
     return (
       <>
-        <h1>Ship List </h1>
-        <div className="ship-container">
+        <h1 >Ship List </h1>
+        <div className="ShipList-grid">
           {this.state.results.map((shipName, idx) => (
             <div key={idx}>
               <Link
